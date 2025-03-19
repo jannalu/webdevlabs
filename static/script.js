@@ -21,8 +21,8 @@ function SumNPrint(x1, x2){
 }
  
 
-SumNPrint(x, y);
-SumNPrint(A, B);
+// SumNPrint(x, y);
+// SumNPrint(A, B);
 
 if (C.length > z){
     console.log(C);
@@ -44,8 +44,8 @@ function findTheBanana(x){
     }
     
 }
-findTheBanana(L1);
-findTheBanana(L2);
+// findTheBanana(L1);
+// findTheBanana(L2);
 
 L1 = ["Watermelon", "Pineapple", "Pear", "Banana"];
 L2 = ["Apple", "Banana", "Kiwi", "Orange"];
@@ -59,8 +59,8 @@ function findTheBanana2(array, name){
 
 }
 
-findTheBanana2(L1, "first");
-findTheBanana2(L2, "second");
+// findTheBanana2(L1, "first");
+// findTheBanana2(L2, "second");
 
 function greetingFunc(){
 
@@ -85,3 +85,85 @@ function greetingFunc(){
 }
 
 greetingFunc();
+
+function addYear(){
+    let d = new Date();
+    let y = d.getFullYear();
+
+    let E = document.getElementById("copyYear");
+    E.innerHTML = y;
+}
+
+function showList(){
+    const button = document.getElementById("showButton");
+    const list = document.getElementById("funList");
+
+    list.style.display = "block";
+    button.style.display = "none";
+
+}
+
+$(document).ready(function() {
+    $("#readMore").click(function() {
+        $("#longBio").slideDown();  
+        $("#readMore").hide();   
+        $("#readLess").show();     
+    });
+
+    $("#readLess").click(function() {
+        $("#longBio").slideUp();      
+        $("#readMore").show();     
+        $("#readLess").hide();     
+    });
+});
+
+  
+function validateForm() {
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const com = document.getElementById("comBox");
+    const demo = document.getElementById("demo");
+  
+    demo.innerHTML = "";
+    demo.className = "";
+  
+
+    if (!name.value) {
+      name.setCustomValidity("please fill out the form correctly!");
+    } else {
+      name.setCustomValidity(""); 
+    }
+  
+
+    if (!email.value) {
+      email.setCustomValidity("please fill out the form correctly!");
+    } else {
+      email.setCustomValidity("");
+    }
+
+    if (!com.value) {
+        com.setCustomValidity("please fill out the form correctly!");
+    } else {
+        com.setCustomValidity("");
+    }
+  
+    
+    if (!name.checkValidity()) {
+      demo.innerHTML = name.validationMessage;
+      return false;
+    }
+  
+    if (!email.checkValidity()) {
+      demo.innerHTML = email.validationMessage;
+      return false;
+    }
+
+    if (!com.checkValidity()) {
+      demo.innerHTML = com.validationMessage;
+      return false;
+    }
+  
+    demo.innerHTML = "Form submitted successfully!";
+    demo.className = "success";
+    return false; // just to prevent real form submission for demo
+}
