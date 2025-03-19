@@ -20,7 +20,7 @@
     <title>janna lu</title>
 
 </head>
-<body  id ="background">
+<body  id ="background" onload = "addYear()">
 
     <header>
         <h1 id ="webname">&nbsp;janna lu</h1>
@@ -35,7 +35,10 @@
     
     <div class="main">
         <h2>things i love to do for fun</h2>
-        <ul>
+
+        <button id = "showButton" onclick ="showList()">click to see...</button>
+
+        <ul id = "funList" style="display: none;">
             <li>swimming</li>
             <li>watch movies</li>
             <li>hanging out with friends</li>
@@ -47,7 +50,8 @@
     </div>
 
     <footer>
-        <p>©2025 designed and coded by janna lu👩🏻‍💻</p>
+        <p style="display: inline;">designed and coded by janna lu👩🏻‍💻</p>
+        <p id="copyYear" style="display: inline;"></p>
 
     </footer>
 </body>

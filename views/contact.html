@@ -19,7 +19,7 @@
     <title>janna lu</title>
 
 </head>
-<body id ="background">
+<body id ="background" onload = "addYear()">
 
     <header>
         <h1 id ="webname">&nbsp;janna lu</h1>
@@ -34,18 +34,20 @@
     
     <div class="main">
         <h2>contact me</h2>
-        <form>
+        <form id ="myForm">
             <label for="name">your name (required):</label>
             <input type ="text" id="name" name="name" required><br>
         <br>
             <label for = "email">email:</label>
-            <input type="text" id="email" name="email"><br>
+            <input type="text" id="email" name="email" required><br>
         <br>
             <label for = "com">comment:</label>
-            <textarea id="comBox" name="com" rows="6" cols="50"></textarea><br>
+            <textarea id="comBox" name="com" rows="6" cols="50" required></textarea><br>
         <br>
            
-            <button type = "send">send</button>
+            <button type = "send" onclick="validateForm()">send</button>
+
+            <div id="demo" class="validation-message"></div>
             
         </form>
 
@@ -68,7 +70,8 @@
     </div>
 
     <footer>
-        <p>©2025 designed and coded by janna lu👩🏻‍💻</p>
+        <p style="display: inline;">designed and coded by janna lu👩🏻‍💻</p>
+        <p id="copyYear" style="display: inline;"></p>
 
     </footer>
 </body>
