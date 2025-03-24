@@ -94,14 +94,14 @@ function addYear(){
     E.innerHTML = y;
 }
 
-function showList(){
-    const button = document.getElementById("showButton");
-    const list = document.getElementById("funList");
+// function showList(){
+//     const button = document.getElementById("showButton");
+//     const list = document.getElementById("funList");
 
-    list.style.display = "block";
-    button.style.display = "none";
+//     list.style.display = "block";
+//     button.style.display = "none";
 
-}
+// }
 
 $(document).ready(function() {
     $("#readMore").click(function() {
@@ -167,3 +167,51 @@ function validateForm() {
     demo.className = "success";
     return false; // just to prevent real form submission for demo
 }
+
+function getAdvice() {
+    // Send a request to the Advice Slip API to get random advice
+    fetch("https://api.adviceslip.com/advice")
+        .then(response => response.json()) // Convert the API response to a JavaScript object
+        .then(data => {
+    // Extract the "advice" text from the JSON response and display it on the webpage
+            document.getElementById("adviceText").innerText = data.slip.advice;
+        })
+        .catch(error => {
+    // If something goes wrong (like no internet), log the error in the console
+            console.error("Error fetching advice:", error);
+    // Display a user-friendly error message on the webpage
+            document.getElementById("adviceText").innerText = "Oops! Something went wrong. Try again.";
+        });
+}
+
+
+let map;
+async function initMap() {
+    // Request needed libraries.
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    const map = new Map(document.getElementById("map"), {
+        center: { lat: 37.4239163, lng: -122.0947209 },
+        zoom: 14,
+        mapId: "4504f8b37365c3d0",
+    });
+    const marker = new AdvancedMarkerElement({
+        map,
+        position: { lat: 37.4239163, lng: -122.0947209 },
+    });
+}
+initMap();
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.href.includes("fun.html")) {
+        console.log("You are on fun.html");
+        
+    }
+
+    if (window.location.href.includes("contact.html")) {
+        console.log("You are on contact.html");
+       
+    }
+});
+    
