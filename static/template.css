@@ -1,0 +1,155 @@
+* {
+    font-family: "Ariel", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: 
+    "wdth" 100;
+
+    padding: 5px;
+    margin: 5px;
+}
+
+.container{
+    display:grid;
+    border-radius:10%;
+
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer"
+    
+}
+
+header {
+    background-color: #d5a6d4; 
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation */
+nav {
+    background-color: #f4cccc; 
+    padding: 10px;
+    text-align: center;
+}
+
+/* Main Content Wrapper */
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    background-color: #eeeeee;
+    padding: 20px;
+}
+
+/* Main Image */
+.mainimg {
+    background-color: #e69a87; 
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.maincontent {
+    background-color: #fcf8bc; 
+    padding: 20px;
+  
+}
+
+
+.bottomcontent {
+    background-color: #a4d79c; 
+    padding: 20px;
+}
+
+.main-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 20px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .main-wrapper {
+        display: grid;
+        grid-template-columns: 1fr; /* Change to single column */
+        grid-template-areas: 
+            "mainimg"
+            "maincontent"; /* Stack items vertically */
+    }
+
+    .mainimg, .maincontent {
+        width: 100%; /* Ensure full width */
+        text-align: center; /* Center content */
+    }
+
+    .nav-links {
+        display: none; /* Hide links */
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 150px;
+        border: 1px solid #ccc;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.show {
+        display: flex; /* Show when toggled */
+    }
+
+    .menu-icon {
+        display: block; /* Show menu icon */
+    }
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Highlight active link */
+.nav-links a.active {
+    color: white;
+    background: black;
+    border-radius: 5px;
+}
+
+/* Change color on hover */
+.nav-links a:hover {
+    color: gray;
+}
+
+@keyframes nameAnimation {
+    0% {
+        color: black;
+        transform: scale(1);
+    }
+    50% {
+        color: #ff6347; /* Tomato color */
+        transform: scale(1.1);
+    }
+    100% {
+        color: black;
+        transform: scale(1);
+    }
+}
+
+/* Apply the animation */
+#webname {
+    font-size: 32px;
+    font-weight: bold;
+    display: inline-block;
+    animation: nameAnimation 3s infinite ease-in-out;
+    transition: all 0.3s ease;
+}

@@ -9,9 +9,6 @@
 
     <script defer src="../static/script.js"></script>
 
-    <!-- google maps API -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -35,56 +32,40 @@
         </nav>
     </header>
     
-    <div class="mainLayout">
+    <div class="main">
+        <h2>contact me</h2>
+        <form id ="myForm">
+            <label for="name">your name (required):</label>
+            <input type ="text" id="name" name="name" required><br>
+        <br>
+            <label for = "email">email:</label>
+            <input type="text" id="email" name="email" required><br>
+        <br>
+            <label for = "com">comment:</label>
+            <textarea id="comBox" name="com" rows="6" cols="50" required></textarea><br>
+        <br>
+           
+            <button type = "send" onclick="validateForm()">send</button>
 
-        <div id = "item1">
-            <h2>find me</h2>
-    
-
-            <div id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.448614415089!2d-79.9454248242529!3d40.44320675402782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f21f58679a9f%3A0x88716b461fc4daf4!2sCarnegie%20Mellon%20University!5e0!3m2!1sen!2sus!4v1742781846318!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                
-            </div>
-
+            <div id="demo" class="validation-message"></div>
             
-        </div>
+        </form>
 
-        <div id = "item2">
+        <table>
+            <tr>
+                <th>email</th>
+                <th>phone</th>
+                <th>linkedin</th>
+            </tr>
+            <tr>
+                <td>jannaanl@andrew.cmu.edu</td>
+                <td>(310)-904-9925</td>
+                <td>
+                    <a href= "https://www.linkedin.com/in/janna-lu-498722263/" target="_blank">linkedin</a>
+                </td>
 
-            <h2>contact me</h2>
-            <form id ="myForm">
-                <label for="name">your name (required):</label>
-                <input type ="text" id="name" name="name" required><br>
-            <br>
-                <label for = "email">email:</label>
-                <input type="text" id="email" name="email" required><br>
-            <br>
-                <label for = "com">comment:</label>
-                <textarea id="comBox" name="com" rows="6" cols="50" required></textarea><br>
-            <br>
-                <button type = "send" onclick="validateForm()">send</button>
-                <div id="demo" class="validation-message"></div>
-            </form>
-
-            <table>
-                <tr>
-                    <th>email</th>
-                    <th>phone</th>
-                    <th>linkedin</th>
-                </tr>
-                <tr>
-                    <td>jannaanl@andrew.cmu.edu</td>
-                    <td>(310)-904-9925</td>
-                    <td>
-                        <a href= "https://www.linkedin.com/in/janna-lu-498722263/" target="_blank">linkedin</a>
-                    </td>
-
-                </tr>
-            </table>
-
-        </div>
-
-    
+            </tr>
+        </table>
 
     </div>
 
